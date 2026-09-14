@@ -59,21 +59,7 @@ class HomeScreen extends StatelessWidget {
                 child: SosButton(
                   onTap: () {
                     // Sera relié au jour 6-7 (cpr_timer_screen ou guide rapide)
-                    itemBuilder: (context, index) {
-  final category = EmergencyData.categories[index];
-  return EmergencyCard(
-    category: category,
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => GuideDetailScreen(category: category),
-        ),
-      );
-    },
-  );
-};   
-               },
+                  },
                 ),
               ),
               const SizedBox(height: 8),
@@ -108,7 +94,12 @@ class HomeScreen extends StatelessWidget {
                   return EmergencyCard(
                     category: category,
                     onTap: () {
-                      // Sera relié au jour 5 (guide_detail_screen)
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => GuideDetailScreen(category: category),
+                        ),
+                      );
                     },
                   );
                 },
